@@ -1,6 +1,11 @@
-import Card from "./components/Card";
+import Card from "./components/Card/Card";
 import Header from "./components/Header"
 import Drawer from "./components/Drawer";
+
+const arr = [
+  { title: "Minecraft", price: 1200, imageUrl: "/img/games/minecraft.jpg" },
+  { title: "Elden Ring", price: 3100, imageUrl: "/img/games/eldenring.jpg" },
+];
 
 function App() {
   return (
@@ -16,65 +21,9 @@ function App() {
           </div>
         </div>
         <div className="catalog">
-          <Card />
-          <div className="card">
-            <div className="favorite">
-              <img src="/img/heart-unliked.svg" alt="Liked" />
-            </div>
-            <img width={120} height={120} src="/img/games/1.jpg" alt="игра" />
-            <h5>Minecraft</h5>
-            <div className="cardInfo">
-              <div className="cardPrice">
-                <p>Цена:</p>
-                <b>1 999 руб.</b>
-              </div>
-              <button>
-                <img width={11} height={11} src="/img/plus.svg" alt="добавить" />
-              </button>
-            </div>
-          </div>
-          <div className="card">
-            <div className="favorite">
-              <img src="/img/heart-liked.svg" alt="Liked" />
-            </div>
-            <img width={120} height={120} src="/img/games/1.jpg" alt="игра" />
-            <h5>Minecraft</h5>
-            <div className="cardInfo">
-              <div className="cardPrice">
-                <p>Цена:</p>
-                <b>1 999 руб.</b>
-              </div>
-              <button>
-                <img width={11} height={11} src="/img/plus.svg" alt="добавить" />
-              </button>
-            </div>
-          </div>
-          <div className="card">
-            <img width={120} height={120} src="/img/games/1.jpg" alt="игра" />
-            <h5>Minecraft</h5>
-            <div className="cardInfo">
-              <div className="cardPrice">
-                <p>Цена:</p>
-                <b>1 999 руб.</b>
-              </div>
-              <button>
-                <img width={11} height={11} src="/img/plus.svg" alt="добавить" />
-              </button>
-            </div>
-          </div>
-          <div className="card">
-            <img width={120} height={120} src="/img/games/1.jpg" alt="игра" />
-            <h5>Minecraft</h5>
-            <div className="cardInfo">
-              <div className="cardPrice">
-                <p>Цена:</p>
-                <b>1 999 руб.</b>
-              </div>
-              <button>
-                <img width={11} height={11} src="/img/plus.svg" alt="добавить" />
-              </button>
-            </div>
-          </div>
+          {arr.map((obj) => (
+            <Card title={obj.title} price={obj.price} imageUrl={obj.imageUrl} />
+          ))}
         </div>
       </div>
     </div>
