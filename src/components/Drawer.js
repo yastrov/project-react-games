@@ -1,33 +1,25 @@
-function Drawer() {
+function Drawer( {onClose, items = []}) {
     return (
-        <div style={{ display: 'none' }} className="overlay">
+        <div className="overlay">
             <div className="drawer">
-                <h2>Корзина</h2>
+                <div className="title">
+                    <img className="closeBtn" width={26} height={26} src="/img/remove.svg" onClick={onClose} alt="Close" />
+                    <h2>Корзина</h2>
+                </div>
                 <div className="items">
-                    <div className="cartItem">
-                        <img width={70} height={70} src="/img/games/1.jpg" alt="игра" />
-                        <div className="cardItemDesc">
-                            <p>Minecraft</p>
-                            <b>1 999 руб.</b>
+                    {
+                        items.map((obj) => (
+                        <div className="cartItem">
+                            <img width={70} height={70} src={obj.imageUrl} alt="игра" />
+                            <div className="cardItemDesc">
+                                <p>{obj.title}</p>
+                                <b>{obj.price}</b>
+                            </div>
+                            <img className="removeBtn" width={32} height={32} src="/img/remove.svg" alt="Remove" />
                         </div>
-                        <img className="removeBtn" width={32} height={32} src="/img/remove.svg" alt="Remove" />
-                    </div>
-                    <div className="cartItem">
-                        <img width={70} height={70} src="/img/games/1.jpg" alt="игра" />
-                        <div className="cardItemDesc">
-                            <p>Minecraft</p>
-                            <b>1 999 руб.</b>
-                        </div>
-                        <img className="removeBtn" width={32} height={32} src="/img/remove.svg" alt="Remove" />
-                    </div>
-                    <div className="cartItem">
-                        <img width={70} height={70} src="/img/games/1.jpg" alt="игра" />
-                        <div className="cardItemDesc">
-                            <p>Minecraft</p>
-                            <b>1 999 руб.</b>
-                        </div>
-                        <img className="removeBtn" width={32} height={32} src="/img/remove.svg" alt="Remove" />
-                    </div>
+                        ))
+                        }
+            
                 </div>
                 <ul className="cartTotalBlock">
                     <li>

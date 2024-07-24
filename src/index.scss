@@ -43,7 +43,7 @@ body {
   li {
     display: flex;
     margin-right: 30px;
-
+    cursor: pointer;
     img {
       width: 18px;
       height: 18px;
@@ -114,6 +114,7 @@ body {
 }
   .catalog {
     display: flex;
+    flex-wrap: wrap;
   }
 
 
@@ -139,6 +140,14 @@ body {
   padding: 0 30px;
   height: 100%;
   box-shadow: -10px 4px 24px 0px #0000001A;
+  .title {
+    display: flex;
+    align-items: center;
+  }
+  .closeBtn {
+    margin-right: 10px;
+    cursor: pointer;
+  }
   h2 {
     margin: 20px 0;
     font-size: 24px;
